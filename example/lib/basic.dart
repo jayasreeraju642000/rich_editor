@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rich_editor/rich_editor.dart';
 
 class BasicDemo extends StatelessWidget {
-  GlobalKey<RichEditorState> keyEditor = GlobalKey();
+ final keyEditor = GlobalKey<RichEditorState>();
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class BasicDemo extends StatelessWidget {
         // You can return a Link (maybe you need to upload the image to your
         // storage before displaying in the editor or you can also use base64
         getImageUrl: (image) {
-          String link = 'https://avatars.githubusercontent.com/u/24323581?v=4';
+          // String link = 'https://avatars.githubusercontent.com/u/24323581?v=4';
           String base64 = base64Encode(image.readAsBytesSync());
           String base64String = 'data:image/png;base64, $base64';
           return base64String;
